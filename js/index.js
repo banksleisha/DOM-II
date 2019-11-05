@@ -3,7 +3,7 @@ const mouse = document.querySelector('.logo-heading');
 const topContainer = document.querySelector('.intro .h2');
 const imgSet = document.querySelector('.content-destination img');
 const dblButtons = document.querySelectorAll('.btn');
-
+const dragImg = document.querySelectorAll("img");
 //Mouseover 
 mouse.addEventListener("mouseover", () =>{
     mouse.style.transform = "scale(1.5)";
@@ -29,6 +29,17 @@ topContainer.addEventListener("wheel", ()=>{
 
 //drag & drop
 
+dragImg.forEach(img => {
+    img.addEventListener(DragEvent, () =>{
+        img.style.opacity = "35%";
+    })
+})
+
+dragImg.forEach(img => {
+    img.addEventListener(DragEvent, () => {
+        img.style.opactiy = "90%";
+    });
+});
 
 
 //load
