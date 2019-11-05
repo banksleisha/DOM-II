@@ -4,13 +4,17 @@ const topContainer = document.querySelector('.intro .h2');
 const imgSet = document.querySelector('.content-destination img');
 const dblButtons = document.querySelectorAll('.btn');
 const dragImg = document.querySelectorAll("img");
+const navSelector = document.querySelectorAll(".nav-link");
+const focusImg = document.querySelector("img");
+
+
+
 //Mouseover 
 mouse.addEventListener("mouseover", () =>{
     mouse.style.transform = "scale(1.5)";
     mouse.style.transition = "all 1s";
-})
- 
-   
+});
+
 
 //keydown listener
 
@@ -49,6 +53,14 @@ window.addEventListener('load', () => {
  });
 
 //focus
+focusImg.addEventListener('focus', (event) => {
+    event.target.style.background = "hotpink";
+});
+
+focusImg.addEventListener('blur', (event) => {
+    event.target.style.background = '';
+});
+
 
 //resize
 
@@ -81,6 +93,11 @@ window.addEventListener('scroll', function(e){
 });
 
 //select
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        link.style.color = "red";
+    })
+})
 
 //dblclick
 
@@ -90,5 +107,11 @@ dblButtons.forEach(button => {
     });
 });
 
+//prevent default
 
+navSelector.forEach(element => {
+    element.addEventListener("click", element => {
+        element.preventDefault();
+    });
+});
 
